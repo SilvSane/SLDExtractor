@@ -1269,13 +1269,13 @@
 
             const n = Math.max(1, parseInt(document.getElementById('selectEveryNInput').value) || 1);
     
-            // Очищаем текущий выбор
+            // clearing current chosen frames
             selectedIndices.length = 0;
             document.querySelectorAll('.result li.selected').forEach(li => {
                 li.classList.remove('selected');
             });
     
-            // Выбираем каждый n-й кадр, начиная с startFrame
+            // Choose every n frames, starting with startFrame
             for (let i = startFrame; i < currentSprite.frames.length; i += n) {
                 const frame = currentSprite.frames[i];
                 if (frame && frame.canvas) {
@@ -1284,7 +1284,7 @@
                 }
             }
     
-            // Показываем/прячем панель инструментов
+            // Show/Hide tool panel
             const toolbarElement = document.querySelector('.toolbar');
             toolbarElement.style.display = selectedIndices.length ? '' : 'none';
         }
@@ -1893,5 +1893,6 @@
 		}
 	</style>
 </body>
+
 
 </html>
